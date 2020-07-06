@@ -16,3 +16,15 @@ class SimpleDatasetLoader:
 		data = []
 		lables = []
 
+		for (i, imagePath) in enumerate(imagePaths):
+
+			image = cv2.imread(imagePath)
+			label = imagePath.split(os.path.sep)[-2]
+
+			if self.preprocessors is not None:
+				for p in self.preprocessors:
+					image = p.preprocess(image)
+
+
+			data.append(image)
+			labels.append(label)
