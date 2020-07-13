@@ -26,8 +26,13 @@ class SimpleDatasetLoader:
 			image = cv2.imread(imagePath)
 			label = imagePath.split(os.path.sep)[-2]
 
+			#checks to see if preprocessors are not None,
+			#if the check passes we loop over each preprocessor and squentially apply
+			#them to the image
 			if self.preprocessors is not None:
 				for p in self.preprocessors:
+					#This allows us to create a chain of preprocessors that can be applied to 
+					#every image in the dataset
 					image = p.preprocess(image)
 
 
