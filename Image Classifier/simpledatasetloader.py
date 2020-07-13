@@ -35,11 +35,13 @@ class SimpleDatasetLoader:
 					#every image in the dataset
 					image = p.preprocess(image)
 
-
+			#Once the image is preprocessed we update the data/label lists
 			data.append(image)
 			labels.append(label)
 
+			#provides a printed updated for every verbose image
 			if verbose > 0 and i > 0 and (i+1) % verbose == 0:
 				print("[INFO] processed {}/{}".format(i + 1, len(immagePaths)))
 
+		#returns a tuple: single row of a table, of data/labels
 		return (np.array(data), np.array(labels))
