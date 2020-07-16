@@ -40,3 +40,5 @@ labels = le.fit_transform(labels)
 
 print("[INFO] evaluating k-NN classifier...")
 model = KNeighborsClassifier(n_neighbors=args["neighbors"], n_jobs=args["jobs"])
+model.fit(trainX, trainY)
+print(classification_report(testY, model.predict(testX), target_names=le.classes_))
