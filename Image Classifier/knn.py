@@ -12,6 +12,7 @@ from pyimagesearch.datasets import SimpleDatasetLoader
 from imutils import paths
 import argparse
 
+#construct the argument parse, and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", required=True,
 	help="path to input dataset")
