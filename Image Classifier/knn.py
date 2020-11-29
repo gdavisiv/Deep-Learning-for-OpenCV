@@ -41,10 +41,10 @@ labels = le.fit_transform(labels)
 #Computer the training/testing splits = 75% data for training, 25% for testing
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size = 0.25, random_state = 42)
 
-
+#Initialize the KNeighbors... class 
 print("[INFO] evaluating k-NN classifier...")
 model = KNeighborsClassifier(n_neighbors=args["neighbors"], n_jobs=args["jobs"])
 
-#
+#storing TrainX and TrainY data internally  to create predictions on testing set
 model.fit(trainX, trainY)
 print(classification_report(testY, model.predict(testX), target_names=le.classes_))
