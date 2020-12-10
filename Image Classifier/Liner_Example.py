@@ -26,3 +26,6 @@ for(label, score) in zip(labels, scores):
 #draws the label(dog. cat, panda) with the highest scores on the image as our prediction
 cv2.putText(orig, "Label: {}".format(labels[np.argmax(scores)]), 
 	(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+
+cv2.imshow("Image", orig)
+cv2.waitKey(0)
