@@ -8,7 +8,7 @@ lables= ["dog", "cat", "panda"]
 np.random.seed(1)
 
 #randomly initialize our weight matrix and bias vectors -- in a *real* world training and classification task
-W = np.random.randn(3, 3702)
+W = np.random.randn(3, 3072)
 b = np.random.randn(3)
 
 #Load the example image/resize/flatten for "Feature Vector" representation
